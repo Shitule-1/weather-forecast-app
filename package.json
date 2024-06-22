@@ -1,0 +1,14 @@
+{
+  "name": "weather-forecast-app",
+  "version": "1.0.0",
+  "description": "This repository created to save changes which is make while developing this weather app  // this is testing message when i clone this repository in vs code",
+  "main": "weather.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  }
+}
