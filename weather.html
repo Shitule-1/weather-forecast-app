@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather forecast Application</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="./input.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-BIz5lGADkZ++3C2cKl1g62YvC4XG1J1C5E4dFKNPPaM1C45geTbkKpgUbO61p7fUZl/+6YBAYoIAD/h5eNVXoA==" crossorigin="anonymous" />
 </head>
 <body>
-    <button></button>
+   <div id="header" class="bg-indigo-800 text-white">
+        <header>Weather Data </header>
+    </div>
+<!-- ============================================= -->
+    <div id="taking_input"> Enter City Name 
+       <div>
+        <input type="text" id="cityInput" placeholder="enter city Name"><br>
+        <button id="searchButton"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Search</button>
+       </div>
+        <div> <h3 style="text-align:center">OR</h3>
+            <button class="bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> 
+                <i class="fa-brands fa-searchengin"></i>Your location </button>
+          </div>
+    </div>
+  <!-- ======================================================================== -->
+       <div id="display_data">
+        <i class="fa-sharp fa-solid fa-magnifying-glass" style="color: #FFD43B;"></i>
+             <h3 id="city"> canda</h3>
+             <h3 id="time">localtime</h3>
+             <h3 id="temp">13</h3>
+       </div>
+
+
+        <script src="./weather.js"></script>
 </body>
+
 </html>
