@@ -42,13 +42,14 @@ body{
     grid-row:3;
     grid-column: 2;
     border: 1px solid green; 
+   
   }
   #div_inside_next_day_div{
     display: flex;
     justify-content: space-around;   
   }
   #div_inside_next_day_div div{
-    border: 1px solid red;
+    border: 1px solid white;
   }
 
 /* styling for input box */
@@ -119,4 +120,58 @@ input[type="text"]:focus {
   font-size: large;
   margin:0% 5%;
   color:black    
+}
+
+  .next_5_day_div {
+    /* General styling */
+    background-color: #343333; /* Light gray background for contrast */
+    border: 1px solid wheat; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside the div */
+    margin: 10px 0; /* Space between divs */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s ease-in-out; /* Smooth transform transition */
+    
+    /* Flexbox for alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.next_5_day_div h4 {
+    /* Styling for the day header */
+    font-size: 1.5em; /* Larger font size */
+    color: wheat; /* Dark gray color */
+    margin: 0 0 10px 0; /* Space below the header */
+}
+
+.next_5_day_div p {
+    /* Styling for the paragraphs */
+    font-size: 1em; /* Standard font size */
+    color: wheat; /* Medium gray color */
+    margin: 5px 0; /* Space between paragraphs */
+}
+.next_5_day_div:hover {
+    /* Hover effect */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Optional media query for responsiveness */
+@media (max-width: 600px) {
+    .next_5_day_div {
+        padding: 10px;
+    }
+
+    .next_5_day_div h4 {
+        font-size: 1.2em;
+    }
+
+    .next_5_day_div p {
+        font-size: 0.9em;
+    }
+}
+
+img{
+  width: 90%;
+  height: 90%;
 }

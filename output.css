@@ -553,3 +553,350 @@ video {
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
 }
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.block {
+  display: block;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.bg-gray-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
+.bg-indigo-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 48 163 / var(--tw-bg-opacity));
+}
+
+.bg-violet-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(76 29 149 / var(--tw-bg-opacity));
+}
+
+.bg-violet-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(221 214 254 / var(--tw-bg-opacity));
+}
+
+.bg-violet-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(167 139 250 / var(--tw-bg-opacity));
+}
+
+.bg-violet-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(139 92 246 / var(--tw-bg-opacity));
+}
+
+.bg-violet-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(91 33 182 / var(--tw-bg-opacity));
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* manual css */
+
+body{
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: 10fr 30fr 40fr;
+  grid-template-columns: 30fr 50fr;
+  border: 1px solid red;
+  height: 90vh;
+  margin: 10px;
+}
+
+#header{
+  border: 1px solid green;
+  text-align: center;
+  grid-row:1;
+  grid-column: 1/4;
+  width: 100%;
+  font-size: 251%;
+}
+
+#taking_input{
+  border: 1px solid green;
+  grid-row:2/4;
+  grid-column: 1/2;
+  margin: 4%;
+}
+
+#display_data{
+  grid-row:2;
+  grid-column: 2;
+  border: 1px solid green;
+}
+
+#next_day{
+  grid-row:3;
+  grid-column: 2;
+  border: 1px solid green;
+}
+
+#div_inside_next_day_div{
+  display: flex;
+  justify-content: space-around;
+}
+
+#div_inside_next_day_div div{
+  border: 1px solid white;
+}
+
+/* styling for input box */
+
+/* Styling for the input box */
+
+input[type="text"] {
+  padding: 10px;
+  box-sizing: border-box;
+  border: 4px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input{
+  width:80%;
+  margin-right:10%;
+  margin-left: 10%;
+  font-size: x-large;
+}
+
+/* Placeholder styling */
+
+input[type="text"]::-moz-placeholder {
+  color: gray;
+  font-style: italic;
+}
+
+input[type="text"]::placeholder {
+  color: gray;
+  font-style: italic;
+}
+
+/* Focus state styling */
+
+input[type="text"]:focus {
+  border-color: green;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+/* css for search button */
+
+#searchButton{
+  width:80%;
+  margin:2% 10%;
+}
+
+#locationButton{
+  width:80%;
+  margin: 1% 10%;
+  color: white;
+  font-size: x-large;
+}
+
+/*  applying style to dropdown */
+
+#city-dropdown{
+  background-color: rgb(50, 48, 48);
+  color: wheat;
+  width:80%;
+  margin: 1% 10%;
+  font-size: large;
+  border: 2px solid lemonchiffon ;
+}
+
+/* dispaly current data  data div */
+
+.city{
+  /*this class added in js file */
+  font-size:xx-large;
+  color: orangered;
+  margin:0% 5%;
+}
+
+.common_class{
+  font-size: large;
+  margin:0% 5%;
+  color:black
+}
+
+.next_5_day_div {
+  /* General styling */
+  background-color: #343333;
+  /* Light gray background for contrast */
+  border: 1px solid wheat;
+  /* Light border for separation */
+  border-radius: 8px;
+  /* Rounded corners */
+  padding: 15px;
+  /* Padding inside the div */
+  margin: 10px 0;
+  /* Space between divs */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  transition: transform 0.2s ease-in-out;
+  /* Smooth transform transition */
+  /* Flexbox for alignment */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.next_5_day_div h4 {
+  /* Styling for the day header */
+  font-size: 1.5em;
+  /* Larger font size */
+  color: wheat;
+  /* Dark gray color */
+  margin: 0 0 10px 0;
+  /* Space below the header */
+}
+
+.next_5_day_div p {
+  /* Styling for the paragraphs */
+  font-size: 1em;
+  /* Standard font size */
+  color: wheat;
+  /* Medium gray color */
+  margin: 5px 0;
+  /* Space between paragraphs */
+}
+
+.next_5_day_div:hover {
+  /* Hover effect */
+  transform: scale(1.05);
+  /* Slightly enlarge on hover */
+}
+
+/* Optional media query for responsiveness */
+
+@media (max-width: 600px) {
+  .next_5_day_div {
+    padding: 10px;
+  }
+
+  .next_5_day_div h4 {
+    font-size: 1.2em;
+  }
+
+  .next_5_day_div p {
+    font-size: 0.9em;
+  }
+}
+
+img{
+  width: 90%;
+  height: 90%;
+}
+
+.hover\:bg-blue-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
