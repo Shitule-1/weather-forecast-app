@@ -1,55 +1,52 @@
-const button=document.getElementById("searchButton")
-const input=document.getElementById("cityInput")
-const next_day=document.getAnimations("next_day")
-const city=document.getElementById("city")
-const time=document.getElementById("time")
-const temp=document.getElementById("temp")
-const humidity=document.getElementById("humidity")
-const loading_Para=document.getElementById("wind")
-const h4=document.getElementById("h4")
-const display_data=document.getElementById("display_data")
+// getting Elements by id name
+const button = document.getElementById("searchButton")
+const input = document.getElementById("cityInput")
+const next_day = document.getAnimations("next_day")
+const city = document.getElementById("city")
+const time = document.getElementById("time")
+const temp = document.getElementById("temp")
+const humidity = document.getElementById("humidity")
+const loading_Para = document.getElementById("wind")
+const h4 = document.getElementById("h4")
+const display_data = document.getElementById("display_data")
+// first when user open the page this message will be see on screen before fetching data
+loading_Para.innerHTML = `<h1 style="color:blue; font-size:21px">Enter city Name and click on search Button or Your Location Button<h1>`
+// adding evenetlistener what happern after cliking search button
+button.addEventListener("click", getData)
+async function getData() {
+    const value = (input.value).toUpperCase()
+    loading_Para.innerHTML = `<h1 style="color:blue; font-size:50px">Loading ${input.value} Weather Data.....<h1>`
 
-loading_Para.innerHTML=`<h1 style="color:blue; font-size:21px">Enter city Name and click on search Button or Your Location Button<h1>`
-
-button.addEventListener("click" ,getData)
- async function getData(){
-    const value=(input.value).toUpperCase() 
-    loading_Para.innerHTML=`<h1 style="color:blue; font-size:50px">Loading ${input.value} Weather Data.....<h1>`
-
-  try{
-    const result= await getInfo(value)
-   console.log(result)
-   city.innerText=`${result.location.name},${result.location.region},${result.location.country}`
-   city.classList.add("city")
-   time.innerText=result.location.localtime  
-   time.classList.add("common_class")
-   temp.innerText=`Temprature: ${result.current.temp_c} °C`;
-   temp.classList.add("common_class")
-   humidity.innerText=`Humidity: ${result.current.humidity}`;
-   humidity.classList.add("common_class")
-   wind.innerText=`Wind speed: ${result.current.wind_kph} kph`;
-   wind.classList.add("common_class")
+    try {
+        const result = await getInfo(value)
+        console.log(result)
+        city.innerText = `${result.location.name},${result.location.region},${result.location.country}`
+        city.classList.add("city")
+        time.innerText = result.location.localtime
+        time.classList.add("common_class")
+        temp.innerText = `Temprature: ${result.current.temp_c} °C`;
+        temp.classList.add("common_class")
+        humidity.innerText = `Humidity: ${result.current.humidity}`;
+        humidity.classList.add("common_class")
+        wind.innerText = `Wind speed: ${result.current.wind_kph} kph`;
+        wind.classList.add("common_class")
 
 
-   // Display next 5 days forecast we created funtion outside this funtion and here we calling that funtion 
-    displayNext5Days(result.forecast.forecastday);
+        // Display next 5 days forecast we created funtion outside this funtion and here we calling that funtion 
+        displayNext5Days(result.forecast.forecastday);
 
-    updateCityDropdown(value)
-}
- catch{
-  confirm("You Entered city data not found (check city Name )")  
-  if(true){
-    
-  }
-  
-  loading_Para.innerHTML=`<h1 style="color:orangered; font-size:40px"> Check you Entered City Name Again <h1>`
-   
-}
+        updateCityDropdown(value)
+    }
+    catch { // if data not fecthed then this error message showing 
+        confirm("You Entered city data not found (check city Name )")
+        loading_Para.innerHTML = `<h1 style="color:orangered; font-size:40px"> Check you Entered City Name Again <h1>`
+
+    }
 
 }
-
-async function getInfo(cityName){
-    return (await fetch(`http://api.weatherapi.com/v1/forecast.json?key=e4b68068fdd34e0789e51102241506&q=${cityName}&days=5&aqi=yes&alerts=yes`)).json()      
+// creating a async funtionn for real time data from api this link contain api also
+async function getInfo(cityName) {
+    return (await fetch(`http://api.weatherapi.com/v1/forecast.json?key=e4b68068fdd34e0789e51102241506&q=${cityName}&days=5&aqi=yes&alerts=yes`)).json()
 }
 
 
@@ -58,7 +55,7 @@ function displayNext5Days(forecastDays) {
     nextDayDiv.innerHTML = ''; // Clear existing content
 
     forecastDays.forEach((day, index) => {
-        if(index < 5) { // Ensures we only get the next 5 days
+        if (index < 5) { // Ensures we only get the next 5 days
             const dayDiv = document.createElement('div');
             dayDiv.innerHTML = `
                 <h4>Day ${index + 1}</h4>
@@ -73,21 +70,21 @@ function displayNext5Days(forecastDays) {
         // funtion for display icon according to temprature
         function getWeatherIcon(temp) {
             if (temp < 0) {
-                return `<img src="./weather_icons/snow.png" alt="Snow icon" class="weather-icon" />`; // Snow icon for freezing temperatures
+                return `<img src="./weather_icons/snow.png" alt="Snow icon" class="weather-icon" />`;
             } else if (temp >= 0 && temp < 15) {
-                return `<img src="./weather_icons/cloudy.png" alt="Cloudy icon" class="weather-icon" />`; // Cloudy icon for cool temperatures
+                return `<img src="./weather_icons/cloudy.png" alt="Cloudy icon" class="weather-icon" />`;
             } else if (temp >= 15 && temp < 25) {
-                return `<img src="./weather_icons/partly_cloudy.png" alt="Partly cloudy icon" class="weather-icon" />`; // Partly cloudy icon for mild temperatures
+                return `<img src="./weather_icons/partly_cloudy.png" alt="Partly cloudy icon" class="weather-icon" />`;
             } else if (temp >= 25 && temp < 35) {
-                return `<img src="./weather_icons/sunny.png" alt="Sunny icon" class="weather-icon" />`; // Sunny icon for warm temperatures
+                return `<img src="./weather_icons/sunny.png" alt="Sunny icon" class="weather-icon" />`;
             } else {
-                return `<img src="./weather_icons/hot.png" alt="Hot icon" class="weather-icon" />`; // Hot icon for high temperatures
+                return `<img src="./weather_icons/hot.png" alt="Hot icon" class="weather-icon" />`;
             }
         }
-        
+
     });
 }
-
+// funtion for upadte city in dropdown as a recent searched history 
 function updateCityDropdown(newCity) {
     let cities = JSON.parse(localStorage.getItem('cities')) || [];
     if (!cities.includes(newCity)) {
@@ -108,14 +105,14 @@ function populateCityDropdown() {
             option.value = city;
             option.text = city;
             cityDropdown.appendChild(option);
-        
+
             option.addEventListener("click", () => {
                 const input = document.getElementById('cityInput');
-                input.value = cities; 
+                input.value = cities;
 
             });
         });
-        
+
     } else {
         cityDropdown.style.display = 'none'; // Hide dropdown if no cities
     }
@@ -138,7 +135,7 @@ async function gotLocation(position) {
     const input = document.getElementById("cityInput");
     input.value = result.location.name;
     button.click()
-  
+
 }
 
 
@@ -148,10 +145,10 @@ function failedToGet() {
 
 const locationButton = document.getElementById("locationButton");
 locationButton.addEventListener("click", () => {
-    loading_Para.innerHTML=`<h1 style="color:blue; font-size:50px">Loading Data Please Wait..........<h1>`
+    loading_Para.innerHTML = `<h1 style="color:blue; font-size:50px">Loading Data Please Wait..........<h1>`
     navigator.geolocation.getCurrentPosition(gotLocation, failedToGet);
 });
 
 async function getInfoByLocation(lat, long) {
-    return (await fetch(`http://api.weatherapi.com/v1/forecast.json?key=e4b68068fdd34e0789e51102241506&q=${lat},${long}&days=5&aqi=yes&alerts=yes`)).json();
+    return (await fetch(`http://api.weatherapi.com/v1/forecast.json?key=676e6ca2e91a4460bb3161428242506&q=${lat},${long}&days=5&aqi=yes&alerts=yes`)).json();
 }

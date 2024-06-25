@@ -13,26 +13,20 @@ body{
     height: 90vh;
     margin: 10px;
     background: linear-gradient(45deg, lavender, lightyellow, mintcream, lightpink);
- 
-
-  }
-  #header{
-    
+   }
+  #header{ 
     text-align: center;
    grid-row:1;
    grid-column: 1/4;
    width: 100%;
    font-size: 251%;
    background: linear-gradient(45deg, lightskyblue, lavenderblush, honeydew, mistyrose);
-
   }
-
   #taking_input{
     grid-row:2/4;
     grid-column: 1/2;
     margin: 4%;
     background: linear-gradient(45deg, lightskyblue, lavenderblush, honeydew, mistyrose, aquamarine);
-
   }
 
   #display_data{
@@ -40,14 +34,11 @@ body{
     grid-column: 2;
     margin: 4%;
     background: linear-gradient(45deg, lightskyblue, lavenderblush, honeydew, mistyrose, aquamarine, papayawhip, peachpuff);
-
   }
   #next_day{
     grid-row:3;
     grid-column: 2;
-    
     background: linear-gradient(45deg, lightskyblue, lavenderblush, honeydew, mistyrose, aquamarine, papayawhip);
-
   }
   #div_inside_next_day_div{
     display: flex;
@@ -74,22 +65,17 @@ input{
   margin-right:10%;
   margin-left: 10%;
   font-size: x-large;
- 
 }
-/* Placeholder styling */
-
+/* css for placehoder text */
 input[type="text"]::placeholder {
   color: gray;
   font-style: italic;
 }
-
-/* Focus state styling */
 input[type="text"]:focus {
   border-color: green;
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
   outline: none;
 }
-
 
 /* css for search button */
 #searchButton{
@@ -104,7 +90,6 @@ input[type="text"]:focus {
   font-size: x-large;
 }
 
-
 /*  applying style to dropdown */
 #city-dropdown{
   background-color: rgb(50, 48, 48);
@@ -116,7 +101,7 @@ input[type="text"]:focus {
 }
 
 /* dispaly current data  data div */
-.city{                  /*this class added in js file */
+.city{        /*this class added in js file */
   font-size:xx-large;
   color: orangered;
    margin:0% 5%;   
@@ -129,13 +114,13 @@ input[type="text"]:focus {
 
   .next_5_day_div {
     /* General styling */
-    background-color: #343333; /* Light gray background for contrast */
-    border: 1px solid wheat; /* Light border for separation */
-    border-radius: 8px; /* Rounded corners */
-    padding: 10px; /* Padding inside the div */
-    margin: 10px; /* Space between divs */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.2s ease-in-out; /* Smooth transform transition */
+    background-color: #343333; 
+    border: 1px solid wheat; 
+    border-radius: 8px;
+    padding: 10px; 
+    margin: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s ease-in-out; 
     
     /* Flexbox for alignment */
     display: flex;
@@ -145,27 +130,20 @@ input[type="text"]:focus {
 
 .next_5_day_div h4 {
     /* Styling for the day header */
-    font-size: 1.5em; /* Larger font size */
-    color: wheat; /* Dark gray color */
+    font-size: 1.5em; 
+    color: wheat; 
     
 }
 
 .next_5_day_div p {
     /* Styling for the paragraphs */
-    font-size: 1em; /* Standard font size */
-    color: wheat; /* Medium gray color */
-    
-}
-
-
-
-
+    font-size: 1em; 
+    color: wheat; }
 .next_5_day_div:hover {
-    /* Hover effect */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+   
+    transform: scale(1.05); 
 }
 
-/* Optional media query for responsiveness */
 @media (max-width: 600px) {
     .next_5_day_div {
         padding: 10px;
@@ -182,7 +160,6 @@ img{
   height: 50%;
 }
 
-
 /* adding css to blinking github icons */
 @keyframes blink {
   0%, 100% { opacity: 1;
@@ -193,4 +170,72 @@ img{
 /*  Apply the animation to the icon */
 #header a {
   animation: blink 1s steps(1, start) infinite;
+}
+
+/* css for iphoneSE screen */
+/* Targeting the iPhone SE (2020 and 2022) */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 375px) 
+  and (min-device-height: 667px) 
+  and (max-device-height: 667px) 
+  and (-webkit-device-pixel-ratio: 2) {
+body{
+    display: grid;
+    display: flex;
+    flex-direction: column;     
+}
+#div_inside_next_day_div{
+  display: flex;
+ flex-direction: column; 
+  justify-content: space-around;   
+}
+.city{                  /*this class added in js file */
+  font-size:large;
+  color: orangered;
+   margin:0% 5%;   
+}
+img{
+  width: 20%;
+  height: 20%;
+}
+}/*this closing cruly bracket of media queary decalartion  */
+
+
+/* css for ipad mini */
+@media screen 
+  and (min-device-width: 744px) 
+  and (max-device-width: 744px) 
+  and (min-device-height: 1133px) 
+  and (max-device-height: 1133px) 
+  and (-webkit-device-pixel-ratio: 2) {
+    body{
+        display: grid;
+        grid-row: 1fr 2fr 2fr;
+        grid-column: 1fr;
+      display: flex;
+      flex-direction: column;     
+  }
+  #div_inside_next_day_div{
+    display: flex;
+   flex-direction: column; 
+    justify-content: space-around;   
+  }
+  
+
+  #display_data{
+    grid-row: 1;
+grid-column: 2;
+  }
+
+  .city{/*this class added in js file */
+    font-size:large;
+    color: orangered;
+     margin:0% 5%;   
+  }
+  img{
+    width: 20%;
+    height: 20%;
+  }
+  
 }
