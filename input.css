@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* manual css */
 
 body{
@@ -11,38 +10,44 @@ body{
     display: grid;
     grid-template-rows: 10fr 30fr 40fr;
     grid-template-columns: 30fr 50fr;
-    border: 1px solid red;
     height: 90vh;
     margin: 10px;
+    background: linear-gradient(45deg, lavender, lightyellow, mintcream, lightpink);
+ 
+
   }
   #header{
-    border: 1px solid green;
+    
     text-align: center;
    grid-row:1;
    grid-column: 1/4;
    width: 100%;
    font-size: 251%;
+   background: linear-gradient(45deg, lightskyblue, lavenderblush, honeydew, mistyrose);
+
   }
 
   #taking_input{
-    border: 1px solid green;
     grid-row:2/4;
     grid-column: 1/2;
     margin: 4%;
+    background: linear-gradient(45deg, lightskyblue, lavenderblush, honeydew, mistyrose, aquamarine);
 
   }
 
   #display_data{
     grid-row:2;
     grid-column: 2;
-    border: 1px solid green;
+    margin: 4%;
+    background: linear-gradient(45deg, lightskyblue, lavenderblush, honeydew, mistyrose, aquamarine, papayawhip, peachpuff);
 
   }
   #next_day{
     grid-row:3;
     grid-column: 2;
-    border: 1px solid green; 
-   
+    
+    background: linear-gradient(45deg, lightskyblue, lavenderblush, honeydew, mistyrose, aquamarine, papayawhip);
+
   }
   #div_inside_next_day_div{
     display: flex;
@@ -127,8 +132,8 @@ input[type="text"]:focus {
     background-color: #343333; /* Light gray background for contrast */
     border: 1px solid wheat; /* Light border for separation */
     border-radius: 8px; /* Rounded corners */
-    padding: 15px; /* Padding inside the div */
-    margin: 10px 0; /* Space between divs */
+    padding: 10px; /* Padding inside the div */
+    margin: 10px; /* Space between divs */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: transform 0.2s ease-in-out; /* Smooth transform transition */
     
@@ -142,15 +147,19 @@ input[type="text"]:focus {
     /* Styling for the day header */
     font-size: 1.5em; /* Larger font size */
     color: wheat; /* Dark gray color */
-    margin: 0 0 10px 0; /* Space below the header */
+    
 }
 
 .next_5_day_div p {
     /* Styling for the paragraphs */
     font-size: 1em; /* Standard font size */
     color: wheat; /* Medium gray color */
-    margin: 5px 0; /* Space between paragraphs */
+    
 }
+
+
+
+
 .next_5_day_div:hover {
     /* Hover effect */
     transform: scale(1.05); /* Slightly enlarge on hover */
@@ -161,17 +170,27 @@ input[type="text"]:focus {
     .next_5_day_div {
         padding: 10px;
     }
-
     .next_5_day_div h4 {
         font-size: 1.2em;
     }
-
     .next_5_day_div p {
         font-size: 0.9em;
     }
 }
-
 img{
-  width: 90%;
-  height: 90%;
+  width: 50;
+  height: 50%;
+}
+
+
+/* adding css to blinking github icons */
+@keyframes blink {
+  0%, 100% { opacity: 1;
+   }
+  50% { opacity: 0; }
+}
+
+/*  Apply the animation to the icon */
+#header a {
+  animation: blink 1s steps(1, start) infinite;
 }

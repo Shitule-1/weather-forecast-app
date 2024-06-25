@@ -5,15 +5,16 @@ const city=document.getElementById("city")
 const time=document.getElementById("time")
 const temp=document.getElementById("temp")
 const humidity=document.getElementById("humidity")
-const wind=document.getElementById("wind")
+const loading_Para=document.getElementById("wind")
 const h4=document.getElementById("h4")
 const display_data=document.getElementById("display_data")
 
+loading_Para.innerHTML=`<h1 style="color:blue; font-size:21px">Enter city Name and click on search Button or Your Location Button<h1>`
+
 button.addEventListener("click" ,getData)
-
-
  async function getData(){
     const value=(input.value).toUpperCase() 
+    loading_Para.innerHTML=`<h1 style="color:blue; font-size:50px">Loading ${input.value} Weather Data.....<h1>`
 
   try{
     const result= await getInfo(value)
@@ -36,13 +37,19 @@ button.addEventListener("click" ,getData)
     updateCityDropdown(value)
 }
  catch{
-  alert("You Entered city data not found (check city Name )")
+  confirm("You Entered city data not found (check city Name )")  
+  if(true){
+    
+  }
+  
+  loading_Para.innerHTML=`<h1 style="color:orangered; font-size:40px"> Check you Entered City Name Again <h1>`
+   
 }
+
 }
 
 async function getInfo(cityName){
-    return (await fetch(`http://api.weatherapi.com/v1/forecast.json?key=e4b68068fdd34e0789e51102241506&q=${cityName}&days=5&aqi=yes&alerts=yes`)).json()
-      
+    return (await fetch(`http://api.weatherapi.com/v1/forecast.json?key=e4b68068fdd34e0789e51102241506&q=${cityName}&days=5&aqi=yes&alerts=yes`)).json()      
 }
 
 
@@ -141,6 +148,7 @@ function failedToGet() {
 
 const locationButton = document.getElementById("locationButton");
 locationButton.addEventListener("click", () => {
+    loading_Para.innerHTML=`<h1 style="color:blue; font-size:50px">Loading Data Please Wait..........<h1>`
     navigator.geolocation.getCurrentPosition(gotLocation, failedToGet);
 });
 
